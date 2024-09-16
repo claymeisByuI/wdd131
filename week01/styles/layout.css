@@ -17,6 +17,7 @@ header {
  }
  nav {
     flex: 1 1 100%;
+    width:100%;
 } 
 
 .navigation{
@@ -41,9 +42,6 @@ header {
 	font-weight: 700;
 	text-decoration: underline;
 	text-decoration-color: yellow;
-}
-.menu { 
-    width:100%;
 }
 
 p {
