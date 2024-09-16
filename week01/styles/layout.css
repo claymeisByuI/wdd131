@@ -6,7 +6,7 @@ body{
     height:100dvh;
     
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 2fr 1fr;
     grid-template-rows: auto auto 1fr auto;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -16,19 +16,22 @@ body{
       "main main aside"
       "footer footer footer";
   }
-nav {
-    margin: 0 auto 2rem;
-    max-width: 90vw;
-    flex: 1 1 100%;
-} 
 .header { 
     grid-area: header;
-    background-color: green;
+    background-color: gray;
+    color: white;
+    height: 4rem;
  }
+ nav {
+    margin: 0 auto 2rem;
+    flex: 1 1 100%;
+} 
+
 .navigation{
     list-style: none;
 	display: flex;
-	background-color: #333;
+	background-color: black;
+    color:white;
 	align-items: center;
     width:100%;
 }
@@ -41,7 +44,6 @@ nav {
 	padding: 0.75rem;
 	text-decoration: none;
 	text-align: center;
-/* 	border: 1px dotted cyan; */
 }
 .navigation a:hover {
 	font-weight: 700;
@@ -58,8 +60,18 @@ p {
 	text-align: center;
 	font-size: smaller;
 }
-.main { grid-area: main; }
+.main { 
+    grid-area: main; 
+    background-color: silver;
+}
 
-.aside { grid-area: aside; }
+.aside {
+    grid-area: aside; 
+    background-color: #e9e9e9;
+}
 
-.footer { grid-area: footer; background-color: green;}
+.footer { grid-area: footer; 
+    height: 4rem;
+    background-color: gray;
+    color:white;
+}
