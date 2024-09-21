@@ -156,5 +156,6 @@ footer .last-modified {
     flex-wrap: nowrap;
     flex-direction: row;
 }
-.body img {
+.card ul{
+    margin-left: 2rem;
 }
