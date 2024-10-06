@@ -1,0 +1,44 @@
+:root {
+  --box-shadow-data: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header,
+footer {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 10px 0;
+}
+main {
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+section img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+#weather img {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  max-height: 8rem;
+}
+
+.info-box {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+footer {
+  font-size: 0.8em;
+}
