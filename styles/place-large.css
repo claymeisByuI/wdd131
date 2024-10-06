@@ -1,33 +1,38 @@
 @media screen and (min-width: 680px) {
   main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: var(--grid-columns);
   }
 
   .hero {
-    max-width: fit-content;
-    background-color: #f5f5f5aa;
-    opacity: 0.75;
-    grid-row: 1/4;
-    grid-column: 1/4;
+    max-width: var(--max-width-hero);
+    background-color: var(--color-hero-background);
+    opacity: var(--opacity-hero);
+    grid-row: 1 / 4;
+    grid-column: 1 / 4;
   }
 
   .info-box {
     z-index: 1;
-    margin: 50px 20px;
-    box-shadow: var(--box-shadow-data);
+    margin: var(--spacing-large) 20px;
+    box-shadow: var(--box-shadow-primary);
+    width: 100%;
   }
 
-  .info-box:first {
+  .info-box:first-child {
     align-self: center;
     margin-left: 2rem;
   }
+
   .info-box > h2 {
-    background-color: green;
-    padding: 10px;
+    background-color: var(--color-heading);
+    color: var(--color-heading-text);
+    padding: var(--padding-info-box);
     text-align: left;
-    box-shadow: var(--box-shadow-data);
+    box-shadow: var(--box-shadow-primary);
+    font-size: var(--font-size-heading);
   }
+
   .info-box:nth-child(2) > h2 {
     margin: 0 2rem 1rem -2rem;
   }
@@ -37,7 +42,7 @@
     text-align: right;
   }
 
-  .info-box:last {
+  .info-box:last-child {
     justify-self: flex-end;
     align-self: flex-end;
   }

@@ -1,24 +1,64 @@
 :root {
-  --box-shadow-data: 0 4px 8px rgba(0, 0, 0, 0.7);
+  /* Colors */
+  --color-header-background: red;
+  --color-header-text: white;
+  --color-background: #f2f2f2;
+  --color-border: #ccc;
+  --color-hero-background: rgba(245, 245, 245, 0.67);
+  --color-heading: blue;
+  --color-heading-text: white;
+  --color-text: #000;
+  --color-footer-text: #333;
+
+  /* Typography */
+  --font-family: Arial, sans-serif;
+  --font-size-footer: 0.8em;
+  --font-size-heading: 1.5em;
+  --font-size-body: 1em;
+
+  /* Spacing */
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
+  --spacing-large: 50px;
+  --padding-info-box: 10px;
+
+  /* Box Shadows and Opacity */
+  --box-shadow-primary: 0 4px 8px rgba(0, 0, 0, 0.7);
+  --opacity-hero: 0.75;
+
+  /* Layout and Sizing */
+  --max-width-hero: fit-content;
+  --grid-columns: repeat(3, 1fr);
+  --image-max-height-weather: 8rem;
+
+  /* Miscellaneous */
+  --transition-duration: 0.3s;
+  --border-radius: 5px;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family);
   margin: 0;
   padding: 0;
+  color: var(--color-text);
 }
+
 header,
 footer {
-  background-color: #f2f2f2;
+  background-color: var(--color-header-background);
+  color: var(--color-header-text);
   text-align: center;
-  padding: 10px 0;
+  padding: var(--spacing-small) 0;
 }
+
 main {
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
+
 section img {
   display: block;
   margin: 0 auto;
@@ -26,19 +66,24 @@ section img {
   height: auto;
 }
 
+.info-box > h2 {
+  text-align: center;
+}
+
 #weather img {
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
-  max-height: 8rem;
+  max-height: var(--image-max-height-weather);
 }
 
 .info-box {
-  margin: 20px 0;
-  padding: 10px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
+  margin: var(--spacing-medium) 0;
+  padding: var(--padding-info-box);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
 }
+
 footer {
-  font-size: 0.8em;
+  font-size: var(--font-size-footer);
 }

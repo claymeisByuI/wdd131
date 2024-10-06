@@ -10,7 +10,6 @@
     <!-- Link to Google Font: Roboto - Regular 400 -->
     <link rel="stylesheet" href="styles/place.css" />
     <link rel="stylesheet" href="styles/place-large.css" />
-    <script src="scripts/place.js" defer></script>
   </head>
   <body>
     <header>
@@ -92,16 +91,42 @@
       <section id="weather" class="info-box">
         <h2>Weather</h2>
         <img src="images/weather_hot.svg" alt="Hot Weather Icon" />
-        <p>Label: Value</p>
-        <p>Label: Value</p>
-        <p>Label: Value</p>
-        <p>Label: Value</p>
+        <table>
+          <tr>
+            <td>Temperature:</td>
+            <td><span id="weather-temperature"></span>&deg;F</td>
+          </tr>
+          <tr>
+            <td>Conditions:</td>
+            <td><span id="weather-conditions"></span></td>
+          </tr>
+          <tr>
+            <td>Wind:</td>
+            <td><span id="weather-wind"></span> mph</td>
+          </tr>
+          <tr>
+            <td>Wind Chill:</td>
+            <td><span id="weather-wind-chill"></span></td>
+          </tr>
+          <tr>
+            <td>Humidity:</td>
+            <td><span id="weather-humidity"></span>%</td>
+          </tr>
+          <tr>
+            <td>Heat index:</td>
+            <td><span id="weather-heat"></span>&deg;F</td>
+          </tr>
+        </table>
       </section>
     </main>
 
     <footer>
-      <p>Standard Footer content - copyright - name - location</p>
-      <p>Last modified: Date</p>
+      <p>
+        &copy;<span id="current-year">copyright</span> - Clayton Meisman - San
+        Antonio TX
+      </p>
+      <p>Last modified: <span class="last-modified">Modified Date</span></p>
     </footer>
+    <script src="scripts/place.js" defer></script>
   </body>
 </html>
