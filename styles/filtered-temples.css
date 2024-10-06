@@ -2,10 +2,14 @@
 
 /* CSS Variables for color scheme */
 :root {
-    --primary-color: #FF6600;    /* Orange */
-    --secondary-color: #FFFFFF;  /* White */
-    --accent-color: #333333;     /* Dark Gray */
-    --background-color: #F9F9F9; /* Light Gray */
+    --primary-color: #FF6600;
+    /* Orange */
+    --secondary-color: #FFFFFF;
+    /* White */
+    --accent-color: #333333;
+    /* Dark Gray */
+    --background-color: #F9F9F9;
+    /* Light Gray */
     --font-family: 'Roboto', sans-serif;
 }
 
@@ -16,6 +20,10 @@ body {
     background-color: var(--background-color);
     color: var(--accent-color);
     font-family: var(--font-family);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header Styles */
@@ -34,7 +42,7 @@ header h1 {
 
 nav {
     margin-top: 10px;
-    width:100%;
+    width: 100%;
 }
 
 nav ul {
@@ -46,65 +54,73 @@ nav ul {
 }
 
 nav li {
-    padding:10px;
     margin-right: 20px;
     text-align: center;
 
 }
+
+li:has(input[type="radio"]:checked),
 nav li:hover {
-    padding:10px;
     margin-right: 20px;
     background-color: var(--secondary-color);
     text-decoration: underline;
-    color: gray;
+    color: var(--primary-color);
+    ;
 }
+
+input[type="radio"] {
+    display: none;
+}
+
+li:has(input[type="radio"]:checked) label,
+nav li:hover label {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+
 .open li {
     display: block;
 }
-li.active {
-    background-color: var(--secondary-color);
-    color: gray;
+
+nav li {
+    display: none;
 }
-nav li{
-    display:none;
-}
-nav a {
-   color: var(--secondary-color);
+
+nav label {
+    display: block;
+    padding: 10px;
+    color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
-nav a:hover {
+nav label:hover {
     text-decoration: underline;
     color: var(--primary-color);
-
 }
 
 #menu {
-	font-size: 1.5rem;
-	border: 0;
-	background: none;
-	color: #000;
+    font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: #000;
     position: absolute;
-	right:0px;
-	top: 0px;
+    right: 0px;
+    top: 0px;
 }
 
 #menu::before {
-	content: "☰";
+    content: "☰";
 }
 
 #menu.open::before {
-	content: "❎";
+    content: "❎";
 }
 
 .open a {
-	display: block;
-}
-
-/* Main Content Styles */
-main {
-    padding: 20px;
+    display: block;
 }
 
 main h2 {
@@ -116,8 +132,9 @@ main h2 {
 
 /* Gallery Grid */
 main {
+    padding: 20px;
     display: grid;
-    grid-template-columns: 1fr;
+    height: 100%;
     grid-gap: 20px;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -158,3 +175,47 @@ footer p {
     font-size: 0.8em;
 }
 
+.temple-card {
+    width: 250px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #3f3f3f;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #e8e8e8;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.temple-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.temple-card h2 {
+    font-size: 24px;
+    color: #3f3f3f;
+    margin-bottom: 10px;
+}
+
+.temple-card p {
+    margin: 5px 0;
+    color: #5f5f5f;
+    font-size: 14px;
+}
+
+.temple-card p .label {
+    color: purple;
+}
+
+.temple-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.9);
+    /* Drop shadow added here */
+}

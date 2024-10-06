@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 131 - Temple Picture View</title>
+  <meta name="description" content="LDS Temple Picture View.">
+  <meta name="author" content="Clayton Meisman">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+  <link rel="stylesheet" href="styles/filtered-temples-large.css">
+
+  <script src="scripts/temple-data.js"></script>
+  <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button id="menu"></button>
+        <nav class="navigation">
+            <ul>
+                <li><a href="/week01/basic-layout.html" title="Home">Home</a></li>
+                <li><label><input type="radio" name="filter" value="all" checked>All</label></li>
+                <li><label><input type="radio" name="filter" value="old">Old</label></li>
+                <li><label><input type="radio" name="filter" value="new">New</label></li>
+                <li><label><input type="radio" name="filter" value="large">Large</label></li>
+                <li><label><input type="radio" name="filter" value="small">Small</label></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Home</h2>
+
+    </main>    
+    <footer>
+        <p>&copy;<span id="currentyear">2020</span> Clayton Meisman - Texas</p>
+        <p><span class="last-modified">9/15/2024</span></p>
+    </footer>
+</body>
+</html>
