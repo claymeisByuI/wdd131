@@ -67,10 +67,7 @@ function updateTemples() {
 		void card.offsetWidth;
 		card.classList.add('visible');
 	});
-
 }
-
-
 
 function createElement(tag, htmlContent = '', className = '', attributes = {}) {
 	const element = document.createElement(tag);
