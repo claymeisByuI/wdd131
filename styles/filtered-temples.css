@@ -72,6 +72,7 @@ input[type="radio"] {
     display: none;
 }
 
+nav a:hover,
 li:has(input[type="radio"]:checked) label,
 nav li:hover label {
     text-decoration: underline;
