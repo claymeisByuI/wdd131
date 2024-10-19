@@ -34,7 +34,8 @@ body {
     width: 300px;
 }
 
-label:has(+ *[required])::after {
+label:has(+ *[required])::after,
+.group-required {
     content: " *";
     color: red;
     margin-left: 0.25rem;
