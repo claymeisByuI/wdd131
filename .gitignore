@@ -1,4 +1,5 @@
 # Logs
+*.ignore
 logs
 *.log
 npm-debug.log*
