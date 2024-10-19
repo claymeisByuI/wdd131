@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Debug Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Debug Form Page</h1>
+        <form action="review.html" method="get" onsubmit="return handleSubmit(event)">
+            <div class="form-group">
+                <label for="productSelect">Product Name</label>
+                <select id="productSelect" name="productSelect" required>
+                    <option value="" disabled selected>Select a Product ...</option>
+                    <option value="Product A">Product A</option>
+                    <option value="Product B">Product B</option>
+                    <option value="Product C">Product C</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="rating">Overall Rating</label>
+                <div class="rating" id="rating" required>
+                    <div class="star-rating">
+                        <input type="radio" name="rating" id="star-a" value="5">
+                        <label for="star-a">5 Stars</label>            
+                        <input type="radio" name="rating" id="star-b" value="4">
+                        <label for="star-b">4 Stars</label>                
+                        <input type="radio" name="rating" id="star-c" value="3">
+                        <label for="star-c">3 Stars</label>                
+                        <input type="radio" name="rating" id="star-d" value="2">
+                        <label for="star-d">2 Stars</label>                
+                        <input type="radio" name="rating" id="star-e" value="1">
+                        <label for="star-e">1 Star</label>
+                    </div>                
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="installationDate">Date of Installation</label>
+                <input type="date" id="installationDate" name="installationDate" required>
+            </div>
+            <div class="form-group">
+                <label>Which features did you find useful in the product? (Check all that apply)</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="durability" name="features" value="Durability">
+                    <label for="durability">Durability</label>
+                    <input type="checkbox" id="easeOfUse" name="features" value="Ease of Use">
+                    <label for="easeOfUse">Ease of Use</label>
+                    <input type="checkbox" id="performance" name="features" value="Performance">
+                    <label for="performance">Performance</label>
+                    <input type="checkbox" id="design" name="features" value="Design">
+                    <label for="design">Design</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="writtenReview">Written Review (Optional)</label>
+                <textarea id="writtenReview" name="writtenReview"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="userName">Your Name (Optional)</label>
+                <input type="text" id="userName" name="userName">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Post Review">
+            </div>
+        </form>
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const productSelect = document.getElementById('productSelect').value;
+            const rating = document.querySelector('input[name="rating"]:checked')?.value || 'No rating selected';
+            const installationDate = document.getElementById('installationDate').value;
+            const features = [...document.querySelectorAll('input[name="features"]:checked')].map(el => el.value).join(', ') || 'No features selected';
+            const writtenReview = document.getElementById('writtenReview').value || 'No review provided';
+            const userName = document.getElementById('userName').value || 'Anonymous';
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <h2>Form Data Debug:</h2>
+                <p><strong>Product Selected:</strong> ${productSelect}</p>
+                <p><strong>Rating:</strong> ${rating}</p>
+                <p><strong>Date of Installation:</strong> ${installationDate}</p>
+                <p><strong>Features:</strong> ${features}</p>
+                <p><strong>Written Review:</strong> ${writtenReview}</p>
+                <p><strong>User Name:</strong> ${userName}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
