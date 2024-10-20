@@ -15,7 +15,7 @@
 <body>
     <div class="form-container">
         <h1>Product Review</h1>
-        <form action="review.html" method="get">
+        <form action="review.html" method="get" id="reviewForm">
             <div class="form-group">
                 <label for="productSelect">Product Name</label>
                 <select id="productSelect" name="productSelect" required>
@@ -69,8 +69,9 @@
             </div>
         </form>
     </div>
+    <div>Review Count<span id="reviewCounter"></span></div>
     <footer>
-        <p>&copy;<span id="currentyear">2020</span> Clayton Meisman - Texas</p>
+        <p>&copy;<span id="current-year">2020</span> Clayton Meisman - Texas</p>
         <p><span class="last-modified">9/15/2024</span></p>
     </footer>
     <script defer src="scripts/form.js"></script>

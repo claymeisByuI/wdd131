@@ -29,4 +29,28 @@ window.onload = function () {
     if (lastModifiedElements && lastModifiedElements.length > 0) {
         lastModifiedElements[0].innerText = lastModified;
     }
+
+    // Check if the counter exists in localStorage
+    if (!localStorage.getItem('reviewCounter')) {
+        localStorage.setItem('reviewCounter', '0');
+    }
+
+    // Display the current counter
+    const reviewCounterElement = document.getElementById('reviewCounter');
+    reviewCounterElement.textContent = `Reviews submitted: ${localStorage.getItem('reviewCounter')}`;
+
+    // Handle form submission
+    const form = document.getElementById('reviewForm');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        let counter = parseInt(localStorage.getItem('reviewCounter'), 10);
+        counter += 1;
+        localStorage.setItem('reviewCounter', counter.toString());
+
+        reviewCounterElement.textContent = `Reviews submitted: ${counter}`;
+        alert('Form submitted successfully!');
+
+        form.reset();
+    });
 };
