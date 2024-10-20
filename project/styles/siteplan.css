@@ -1,0 +1,83 @@
+:root {
+    --main-color: hsl(41, 30%, 66%);
+    --accent-color: hsl(41, 46%, 34%);
+    --light-accent-color: hsl(41, 90%, 92%);
+    --font-main: 'Roboto';
+    --font-header: 'lora';
+}
+
+body {
+    font-family: var(--font-main), sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.font-lora {
+    font-family: var(--font-header), serif
+}
+
+.font-roboto {
+    font-family: var(--font-main), sans-serif;
+}
+
+header {
+    font-family: var(--font-header);
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+h1,
+h2 {
+    font-family: var(--font-header);
+    color: var(--accent-color);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--accent-color);
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.content {
+    margin: 20px 0;
+}
+
+.scenario {
+    background-color: var(--light-accent-color);
+    padding: 10px;
+    border-left: 5px solid var(--accent-color);
+    margin: 10px 0;
+}
+
+.accentColor::before {
+    background-color: var(--accent-color);
+}
+
+.mainColor::before {
+    background-color: var(--main-color);
+}
+
+.lightAccentColor::before {
+    background-color: var(--light-accent-color);
+}
+
+.lightAccentColor::before,
+.accentColor::before,
+.mainColor::before {
+    content: '';
+    left: 0px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    position: relative;
+    display: inline-block;
+}
