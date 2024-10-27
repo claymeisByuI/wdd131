@@ -10,9 +10,11 @@ main {
     /* Two rows */
     gap: 16px;
 }
-li{
-    padding-bottom:30px;
+
+li {
+    padding-bottom: 30px;
 }
+
 .card:first-child {
     position: sticky;
     top: 0;

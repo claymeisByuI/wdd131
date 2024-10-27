@@ -2,101 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="3D Printing Education and Exploration ">
-    <meta name="author" content="Clayton Meisman">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="3D Printing Education and Exploration " name="description">
+    <meta content="Clayton Meisman" name="author">
     <title>3D Printing Education and Exploration</title>
-    <link rel="stylesheet"
+    <link href="styles/base.css"
+          rel="stylesheet"
           type="text/css"
-          href="styles/base.css"
     />
-    <link rel="stylesheet"
+    <link href="styles/issues_and_tips.css"
+          rel="stylesheet"
           type="text/css"
-          href="styles/issues_and_tips.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="scripts/getdates.js" defer></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <script defer src="scripts/getdates.js"></script>
 
 </head>
 <body>
-    <header>
-        <h1 class="title">3D Printing Education and Exploration</h1>
-        <nav>
-            <input type="checkbox" id="sidebar-active">
-            <label for="sidebar-active" class="open-sidebar-button">
-              <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+<header>
+    <h1 class="title">3D Printing Education and Exploration</h1>
+    <nav>
+        <input id="sidebar-active" type="checkbox">
+        <label class="open-sidebar-button" for="sidebar-active">
+            <svg height="32" viewBox="0 -960 960 960" width="32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+            </svg>
+        </label>
+        <label for="sidebar-active" id="overlay"></label>
+        <div class="links-container">
+            <label class="close-sidebar-button" for="sidebar-active">
+                <svg height="32" viewBox="0 -960 960 960" width="32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
             </label>
-            <label id="overlay" for="sidebar-active"></label>
-            <div class="links-container">
-              <label for="sidebar-active" class="close-sidebar-button">
-                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-              </label>
-        
-              <a class="home-link" href="index.html">Home</a> 
-              <a class="" href="printers.html">Printers</a>
-              <a class="active" href="issues_and_tips.html">Issues & Tips</a>
-            </div>
-          </nav>
-    </header>
-    <main>
-        <section class="card">
-            <h1 class="header">
-                Ask for help
-            </h1>
-            <div class="body">
-                <div class="topic-container">
-                    <div class="topic">
-                        <form id="requestForm">
-                            <div class="form-group">
-                                <label for="userEmail">Your Email (will be hidden)</label>
-                                <input type="email" id="userEmail" required name="userEmail">
-                            </div>
-                            <div class="form-group">
-                                <label for="userName">Your Name</label>
-                                <input type="text" id="userName" required name="userName">
-                            </div>
-                            <div class="form-group">
-                                <label for="printer">Printer Name</label>
-                                <input type="text"  list="printersList" name="printer" id="printer" required>
-                                <datalist id="printersList">
-                                    <option value="Bambu X1C">
-                                    <option value="Bambu P1S">
-                                    <option value="Bambu A1">
-                                    <option value="Elegoo Saturn">
-                                    <option value="Elegoo Mars">
-                                    <option value="Prusa MKS">
-                                </datalist>
-                            </div>
-                            <div class="form-group">
-                                <label for="writtenRequest">Current Issue:</label>
-                                <textarea id="writtenRequest" name="writtenRequest"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="Post Request for Help">
-                            </div>
-                        </form>                    
-                    </div>
+
+            <a class="home-link" href="index.html">Home</a>
+            <a class="" href="printers.html">Printers</a>
+            <a class="active" href="issues_and_tips.html">Issues & Tips</a>
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="card">
+        <h1 class="header">
+            Ask for help
+        </h1>
+        <div class="body">
+            <div class="topic-container">
+                <div class="topic">
+                    <form id="requestForm">
+                        <div class="form-group">
+                            <label for="userEmail">Your Email (will be hidden)</label>
+                            <input id="userEmail" name="userEmail" required type="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">Your Name</label>
+                            <input id="userName" name="userName" required type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="printer">Printer Name</label>
+                            <input id="printer" list="printersList" name="printer" required type="text">
+                            <datalist id="printersList">
+                                <option value="Bambu X1C">
+                                <option value="Bambu P1S">
+                                <option value="Bambu A1">
+                                <option value="Elegoo Saturn">
+                                <option value="Elegoo Mars">
+                                <option value="Prusa MKS">
+                            </datalist>
+                        </div>
+                        <div class="form-group">
+                            <label for="writtenRequest">Current Issue:</label>
+                            <textarea id="writtenRequest" name="writtenRequest"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Post Request for Help">
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
-        <section class="card">
-            <h1 class="header">
-                Requests for help
-            </h1>
-            <div class="body">
-                <ul id="requestList">
-                    
-                </ul>
-            </div>
-        </section>
-    </main>    
-    <footer>
-        <p>&copy;<span id="currentyear">2020</span> Clayton Meisman - Texas</p>
-        <p><span class="last-modified">9/15/2024</span></p>
-    </footer>
-    <script src="scripts/issues_and_tips.js"></script>
+        </div>
+    </section>
+    <section class="card">
+        <h1 class="header">
+            Requests for help
+        </h1>
+        <div class="body">
+            <ul id="requestList">
+
+            </ul>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>&copy;<span id="currentyear">2020</span> Clayton Meisman - Texas</p>
+    <p><span class="last-modified">9/15/2024</span></p>
+</footer>
+<script src="scripts/issues_and_tips.js"></script>
 
 </body>
 </html>

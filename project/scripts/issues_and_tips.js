@@ -1,6 +1,6 @@
 window.onload = function () {
     let reviews = JSON.parse(localStorage.getItem("requestData")) || defaultRequestData;
-    if(reviews === 0) {
+    if (reviews === 0) {
         localStorage.setItem("requestData", JSON.stringify(defaultRequestData));
     }
 
@@ -45,7 +45,8 @@ function rebuildRequestList() {
             <div>${request.writtenRequest}</div>`;
         requestList.appendChild(requestItem);
     });
-};
+}
+
 // ai generated data below  (So freaking crazy)
 const defaultRequestData = [
     {
