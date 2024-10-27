@@ -1,0 +1,99 @@
+﻿main {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 90%;
+    height: 100%;
+    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* Two columns, left larger */
+    grid-template-rows: repeat(5, auto);
+    /* Two rows */
+    gap: 16px;
+}
+.card{
+    height:fit-content;
+}
+.card:first-child{
+    grid-column: 1 / 2;
+    /* Takes the second column */
+    grid-row: 1 / -1;
+    height:min-content;
+}
+.faded {
+    font-weight: normal;
+    font-style: italic;
+    opacity: 0.35;
+}
+
+.header {
+    position: relative;
+}
+
+/* Styling for 'fdm' label */
+.header.fdm::after {
+    content: "Filament";
+    position: absolute;
+    right: 0px;
+    top: 0%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: hsl(from var(--accent-color) h s calc(l + 10));
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    height:100%;
+    width: 100px;
+    align-content: center;
+    
+}
+
+/* Styling for 'resin' label */
+.header.resin::after {
+    content: "Resin";
+    position: absolute;
+    right: 0px;
+    top: 0%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: hsl(from var(--accent-color) h s calc(l + 5));
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    height:100%;
+    width: 100px;
+    align-content: center;
+}
+
+/* Stacked labels when both 'fdm' and 'resin' classes are present */
+.header.fdm.resin::before {
+    content: "Filament";
+    position: absolute;
+    right: 0px;
+    top: 0%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: hsl(from var(--accent-color) h s calc(l + 10));
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    height: 50%;
+    width: 100px;
+    align-content: center;
+}
+
+.header.fdm.resin::after {
+    content: "Resin";
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: hsl(from var(--accent-color) h s calc(l + 5));
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    height:50%;
+    width: 100px;
+    align-content: center;
+}
